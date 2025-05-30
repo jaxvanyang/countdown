@@ -1,9 +1,11 @@
 from math import floor, log10
+from pathlib import Path
 from textual.app import App, ComposeResult, RenderResult
 from textual.widget import Widget
 from textual.widgets import Digits
 from textual.containers import HorizontalGroup
 from datetime import datetime
+from platformdirs import user_config_dir
 
 class CountDown(Digits):
     DEFAULT_VALUE = "00:00:00"
@@ -70,6 +72,7 @@ class CountDownApp(App):
 
     TITLE = "Count Down"
     DEFAULT_DATE = (2026, 1, 1)
+    CONFIG_PATH = Path(user_config_dir("countdown")) / "date.csv"
     BINDINGS = [
         ("q", "quit", "Quit")
     ]
@@ -89,9 +92,21 @@ class CountDownApp(App):
     }
     """
 
+    def __init__(self, date: tuple[int, int, int] | None = None):
+        super().__init__()
+
+        if self.CONFIG_PATH.is_file():
+            with open(self.CONFIG_PATH) as f:
+                content = ",".join(f.readlines())
+                values = content.split(",")
+                if len(values) == 3:
+                    date = (int(values[0]), int(values[1]), int(values[2]))
+
+        self.date = date or self.DEFAULT_DATE
+
     def compose(self) -> ComposeResult:
-        yield HorizontalGroup(CountDown(*self.DEFAULT_DATE), id="countdown")
-        yield DateSelector(*self.DEFAULT_DATE)
+        yield HorizontalGroup(CountDown(*self.date), id="countdown")
+        yield DateSelector(*self.date)
 
 def main():
     app = CountDownApp()
