@@ -1,5 +1,12 @@
-# Count Down
+# Countdown
 
-A count down app in terminal.
+A simple countdown app in terminal.
 
-![Screenshot](./assets/screenshot.svg)
+[![showcase](./assets/showcase.png)](https://asciinema.org/a/722366)
+
+## Key bindings
+
+1. Select left: `arrow left`, `a`, `h`.
+2. Select right: `arrow right`, `d`, `l`.
+2. Increase: `arrow up`, `w`, `k`.
+2. Decrease: `arrow down`, `s`, `j`.
