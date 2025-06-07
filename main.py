@@ -76,8 +76,8 @@ class DateSelector(HorizontalGroup, can_focus=True):
         ("up,k,w", "increase", "Increase"),
         ("down,j,s", "decrease", "Decrease"),
     ]
-    MIN_YEAR = 2000
-    MAX_YEAR = 2050
+    MIN_YEAR = 1
+    MAX_YEAR = 9999
 
     def __init__(self, year: int, month: int, day: int, hour: int = 0, minute: int = 0) -> None:
         super().__init__()
