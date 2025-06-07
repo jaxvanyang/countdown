@@ -71,10 +71,10 @@ class DateSelector(HorizontalGroup, can_focus=True):
     }
     """
     BINDINGS = [
-        ("h", "select_left", "Select left"),
-        ("j", "decrease", "Decrease"),
-        ("k", "increase", "Increase"),
-        ("l", "select_right", "Select right"),
+        ("left,h,a", "select_left", "Select left"),
+        ("right,l,d", "select_right", "Select right"),
+        ("up,k,w", "increase", "Increase"),
+        ("down,j,s", "decrease", "Decrease"),
     ]
     MIN_YEAR = 2000
     MAX_YEAR = 2050
