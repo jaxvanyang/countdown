@@ -4,6 +4,12 @@ A simple countdown app in terminal.
 
 [![showcase](./assets/showcase.png)](https://asciinema.org/a/722366)
 
+## Run
+
+```bash
+uv run main.py
+```
+
 ## Key bindings
 
 1. Select left: `arrow left`, `a`, `h`.
