@@ -7,7 +7,7 @@ A simple countdown app in terminal.
 ## Run
 
 ```bash
-uv run main.py
+uv run countdown
 ```
 
 ## Key bindings

@@ -3,8 +3,18 @@ name = "countdown"
 version = "0.1.0"
 description = "A count down app in terminal."
 readme = "README.md"
+authors = [
+    { name = "Jax Young", email = "jaxvanyang@gmail.com" }
+]
 requires-python = ">=3.13"
 dependencies = [
     "platformdirs>=4.3.8",
     "textual>=3.2.0",
 ]
+
+[project.scripts]
+countdown = "countdown:main"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
