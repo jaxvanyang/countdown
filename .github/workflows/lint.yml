@@ -1,0 +1,14 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/ruff-action@v3
+      - name: Check format with Ruff
+        run: |
+          ruff format --check
