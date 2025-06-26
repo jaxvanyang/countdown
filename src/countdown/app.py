@@ -5,14 +5,12 @@ from datetime import datetime
 from platformdirs import user_config_dir
 from .widgets import Countdown, DateSelector
 
-class CountdownApp(App):
 
+class CountdownApp(App):
     TITLE = "Countdown"
     DEFAULT_DATE = [2026, 1, 1, 0, 0]
     CONFIG_PATH = Path(user_config_dir("countdown")) / "date.csv"
-    BINDINGS = [
-        ("q", "quit", "Quit")
-    ]
+    BINDINGS = [("q", "quit", "Quit")]
     CSS = """
     Screen {
         align: center middle;
@@ -33,7 +31,7 @@ class CountdownApp(App):
         super().__init__()
 
         date = date or self.load_date()
-        date.extend(self.DEFAULT_DATE[len(date):len(self.DEFAULT_DATE)])
+        date.extend(self.DEFAULT_DATE[len(date) : len(self.DEFAULT_DATE)])
         self.date = date
 
     def compose(self) -> ComposeResult:

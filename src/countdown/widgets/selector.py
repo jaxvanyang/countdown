@@ -5,8 +5,8 @@ from textual.widget import Widget
 from textual.containers import HorizontalGroup
 from countdown.utils import days_of_month, is_leap_year, cycle_update
 
-class NumberSelector(Widget):
 
+class NumberSelector(Widget):
     DEFAULT_CSS = """
     NumberSelector {
         width: auto;
@@ -15,7 +15,9 @@ class NumberSelector(Widget):
     }
     """
 
-    def __init__(self, min: int, max: int, default: int | None = None, **kwargs) -> None:
+    def __init__(
+        self, min: int, max: int, default: int | None = None, **kwargs
+    ) -> None:
         super().__init__(**kwargs)
 
         self.min = min
@@ -26,6 +28,7 @@ class NumberSelector(Widget):
     def render(self) -> RenderResult:
         width = floor(log10(self.max)) + 1
         return f"{self.value:0{width}}"
+
 
 class DateSelector(HorizontalGroup, can_focus=True):
     """A widget to select date."""
@@ -52,7 +55,9 @@ class DateSelector(HorizontalGroup, can_focus=True):
     MIN_YEAR = 1
     MAX_YEAR = 9999
 
-    def __init__(self, year: int, month: int, day: int, hour: int = 0, minute: int = 0) -> None:
+    def __init__(
+        self, year: int, month: int, day: int, hour: int = 0, minute: int = 0
+    ) -> None:
         super().__init__()
 
         self.selected = 0
@@ -63,9 +68,13 @@ class DateSelector(HorizontalGroup, can_focus=True):
         self.minute = minute
 
     def compose(self) -> ComposeResult:
-        yield NumberSelector(self.MIN_YEAR, self.MAX_YEAR, self.year, classes="selected", id="year")
+        yield NumberSelector(
+            self.MIN_YEAR, self.MAX_YEAR, self.year, classes="selected", id="year"
+        )
         yield NumberSelector(1, 12, self.month, id="month")
-        yield NumberSelector(1, days_of_month(self.month, is_leap_year(self.year)), self.day, id="day")
+        yield NumberSelector(
+            1, days_of_month(self.month, is_leap_year(self.year)), self.day, id="day"
+        )
         yield NumberSelector(0, 23, self.hour, id="hour")
         yield NumberSelector(0, 59, self.minute, id="minute")
 

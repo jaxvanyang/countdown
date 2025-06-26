@@ -4,6 +4,7 @@ __all__ = [
     "CountdownApp",
 ]
 
+
 def main():
     app = CountdownApp()
     app.run()

@@ -2,6 +2,7 @@ from math import floor
 from textual.widgets import Digits
 from datetime import datetime
 
+
 class Countdown(Digits):
     DEFAULT_VALUE = "00:00:00"
 
