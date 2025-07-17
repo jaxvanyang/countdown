@@ -6,7 +6,7 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Jax Young", email = "jaxvanyang@gmail.com" }]
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = ["platformdirs>=4.3.8", "textual>=3.2.0"]
 
 [project.scripts]
