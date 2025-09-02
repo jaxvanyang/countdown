@@ -24,7 +24,7 @@ rich==14.0.0
     # via textual
 textual==6.0.0
     # via countdown
-typing-extensions==4.13.2
+typing-extensions==4.15.0
     # via textual
 uc-micro-py==1.0.3
     # via linkify-it-py
