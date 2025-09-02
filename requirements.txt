@@ -22,7 +22,7 @@ pygments==2.19.2
     #   textual
 rich==14.0.0
     # via textual
-textual==5.3.0
+textual==6.0.0
     # via countdown
 typing-extensions==4.13.2
     # via textual
