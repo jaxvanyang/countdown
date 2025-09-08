@@ -12,7 +12,7 @@ mdit-py-plugins==0.5.0
     # via markdown-it-py
 mdurl==0.1.2
     # via markdown-it-py
-platformdirs==4.3.8
+platformdirs==4.4.0
     # via
     #   countdown
     #   textual
