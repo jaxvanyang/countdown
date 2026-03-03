@@ -26,5 +26,5 @@ textual==8.0.1
     # via countdown
 typing-extensions==4.15.0
     # via textual
-uc-micro-py==1.0.3
+uc-micro-py==2.0.0
     # via linkify-it-py
