@@ -20,7 +20,7 @@ pygments==2.19.2
     # via
     #   rich
     #   textual
-rich==14.3.3
+rich==15.0.0
     # via textual
 textual==8.0.2
     # via countdown
