@@ -16,7 +16,7 @@ platformdirs==4.9.6
     # via
     #   countdown
     #   textual
-pygments==2.19.2
+pygments==2.20.0
     # via
     #   rich
     #   textual
